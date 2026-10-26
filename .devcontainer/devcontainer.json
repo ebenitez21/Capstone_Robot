@@ -1,0 +1,17 @@
+{
+  "name": "ROS 2 Jazzy (Ubuntu 24.04)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "ms-iot.vscode-ros"
+      ]
+    }
+  },
+  "postCreateCommand": "rosdep update && rosdep install --from-paths src --ignore-src -y -r || true",
+  "remoteUser": "root"
+}
