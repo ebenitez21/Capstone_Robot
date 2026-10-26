@@ -1,0 +1,226 @@
+solid 020.stl
+  facet normal 0 1 0
+    outer loop
+      vertex 74.5 134 3.5
+      vertex 125.5 134 3.5
+      vertex 125.5 134 0
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 74.5 134 3.5
+      vertex 125.5 134 0
+      vertex 74.5 134 0
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 74.5 66 0
+      vertex 125.5 66 0
+      vertex 125.5 66 3.5
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 74.5 66 0
+      vertex 125.5 66 3.5
+      vertex 74.5 66 3.5
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 74.5 134 0
+      vertex 74.5 66 0
+      vertex 74.5 66 3.5
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 74.5 134 0
+      vertex 74.5 66 3.5
+      vertex 74.5 134 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 125.5 134 3.5
+      vertex 122.5 131 3.5
+      vertex 125.5 66 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 122.5 131 3.5
+      vertex 122.5 69 3.5
+      vertex 125.5 66 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 125.5 66 3.5
+      vertex 122.5 69 3.5
+      vertex 74.5 66 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 122.5 69 3.5
+      vertex 77.5 69 3.5
+      vertex 74.5 66 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 74.5 66 3.5
+      vertex 77.5 69 3.5
+      vertex 74.5 134 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 77.5 69 3.5
+      vertex 77.5 131 3.5
+      vertex 74.5 134 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 74.5 134 3.5
+      vertex 77.5 131 3.5
+      vertex 122.5 131 3.5
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 122.5 131 3.5
+      vertex 125.5 134 3.5
+      vertex 74.5 134 3.5
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 125.5 134 3.5
+      vertex 125.5 66 3.5
+      vertex 125.5 66 0
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 125.5 134 3.5
+      vertex 125.5 66 0
+      vertex 125.5 134 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 74.5 134 0
+      vertex 77.5 131 0
+      vertex 74.5 66 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 77.5 131 0
+      vertex 77.5 69 0
+      vertex 74.5 66 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 74.5 66 0
+      vertex 77.5 69 0
+      vertex 125.5 66 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 77.5 69 0
+      vertex 122.5 69 0
+      vertex 125.5 66 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 125.5 66 0
+      vertex 122.5 69 0
+      vertex 125.5 134 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 122.5 69 0
+      vertex 122.5 131 0
+      vertex 125.5 134 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 125.5 134 0
+      vertex 122.5 131 0
+      vertex 77.5 131 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 77.5 131 0
+      vertex 74.5 134 0
+      vertex 125.5 134 0
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 77.5 131 0
+      vertex 122.5 131 3.5
+      vertex 77.5 131 3.5
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 77.5 131 0
+      vertex 122.5 131 0
+      vertex 122.5 131 3.5
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 77.5 69 3.5
+      vertex 122.5 69 0
+      vertex 77.5 69 0
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 77.5 69 3.5
+      vertex 122.5 69 3.5
+      vertex 122.5 69 0
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 77.5 131 3.5
+      vertex 77.5 69 0
+      vertex 77.5 131 0
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 77.5 131 3.5
+      vertex 77.5 69 3.5
+      vertex 77.5 69 0
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 122.5 131 0
+      vertex 122.5 69 3.5
+      vertex 122.5 131 3.5
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 122.5 131 0
+      vertex 122.5 69 0
+      vertex 122.5 69 3.5
+    endloop
+  endfacet
+endsolid 020.stl

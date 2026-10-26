@@ -1,17 +1,16 @@
 {
-  "name": "ROS 2 Jazzy (Ubuntu 24.04)",
+  "name": "ROS 2 Jazzy + Foxglove",
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "forwardPorts": [8765],
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-vscode.cpptools",
-        "ms-python.python",
-        "ms-iot.vscode-ros"
+        "ms-python.python"
       ]
     }
   },
-  "postCreateCommand": "rosdep update && rosdep install --from-paths src --ignore-src -y -r || true",
   "remoteUser": "root"
 }
