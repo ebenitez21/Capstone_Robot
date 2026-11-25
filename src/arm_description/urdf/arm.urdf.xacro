@@ -1,7 +1,200 @@
 <?xml version="1.0"?>
 <robot name="arm_6dof" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- Include sub-file -->
-  <xacro:include filename="$(find arm_description)/urdf/example.xacro"/>
+  <!-- WORLD ROOT (Floor Plane Z = 0) -->
+  <link name="world"/>
+
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.2735" rpy="0 0 0"/>
+  </joint>
+
+  <!-- BASE LINK (P0 = [0, 0, 0]) -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- JOINT 1: Base Yaw (Z-axis) | P1 = [-0.00002, 0.13303, -0.14964] -->
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="-0.00002 0.13303 -0.14964" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="50.0" velocity="1.5"/>
+  </joint>
+
+  <!-- LINK 1 (-P1) -->
+  <link name="link_1">
+    <visual>
+      <origin xyz="0.00002 -0.13303 0.14964" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.4 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00002 -0.13303 0.14964" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- JOINT 2: Shoulder Pitch (X-axis) | P2 - P1 = [0.00197, -0.00720, 0.10988] -->
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.00197 -0.00720 0.10988" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="50.0" velocity="1.5"/>
+  </joint>
+
+  <!-- LINK 2 (-P2) -->
+  <link name="link_2">
+    <visual>
+      <origin xyz="-0.00195 -0.12583 0.03976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="light_gray">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00195 -0.12583 0.03976" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- JOINT 3: Elbow Pitch (X-axis) | P3 - P2 = [0.08890, 0.13977, 0.27999] -->
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0.08890 0.13977 0.27999" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="50.0" velocity="1.5"/>
+  </joint>
+
+  <!-- LINK 3 (-P3) -->
+  <link name="link_3">
+    <visual>
+      <origin xyz="-0.09085 -0.26560 -0.24023" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.4 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.09085 -0.26560 -0.24023" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- JOINT 4: Forearm Roll (Z-axis) | P4 - P3 = [-0.00942, -0.01460, 0.13476] -->
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <origin xyz="-0.00942 -0.01460 0.13476" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="20.0" velocity="2.0"/>
+  </joint>
+
+  <!-- LINK 4 (-P4) -->
+  <link name="link_4">
+    <visual>
+      <origin xyz="-0.08143 -0.25100 -0.37499" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="light_gray">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.08143 -0.25100 -0.37499" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- JOINT 5: Wrist Pitch (X-axis) | P5 - P4 = [-0.03334, -0.04756, 0.19314] -->
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <origin xyz="-0.03334 -0.04756 0.19314" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="20.0" velocity="2.0"/>
+  </joint>
+
+  <!-- LINK 5 (-P5) -->
+  <link name="link_5">
+    <visual>
+      <origin xyz="-0.04809 -0.20344 -0.56813" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.4 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.04809 -0.20344 -0.56813" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- JOINT 6: Flange Roll (Z-axis) | P6 - P5 = [-0.02012, -0.03622, 0.01608] -->
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <origin xyz="-0.02012 -0.03622 0.01608" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="10.0" velocity="2.5"/>
+  </joint>
+
+  <!-- LINK 6 (-P6) -->
+  <link name="link_6">
+    <visual>
+      <origin xyz="-0.02797 -0.16722 -0.58421" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark_gray">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.02797 -0.16722 -0.58421" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="https://shadowy-skeleton-r7wv77x7v6gp3w5qr-8080.app.github.dev/link_6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
 </robot>
